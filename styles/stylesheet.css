@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(241, 241, 241);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+#gameName{
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee', cursive;
+    margin: 0;
+    padding: 0.5em;
+    color: rgb(12, 12, 12);
+    background-color: rgb(216, 55, 55); 
+}
+
+#game{
+    display: flex;
+    flex-flow: column nowrap;
+    user-select: none;
+}
