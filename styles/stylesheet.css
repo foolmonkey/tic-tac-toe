@@ -15,8 +15,18 @@ body{
     background-color: rgb(216, 55, 55); 
 }
 
-#game{
+#container{
     display: flex;
-    flex-flow: column nowrap;
+    width: 60vh;
+    height: 60vh;
+    flex-flow: row wrap;
     user-select: none;
+}
+
+.square{
+    width: 33%;
+    height: 33%;
+    border-color: royalblue;
+    border-width: 2px;
+    border-style: solid;
 }
