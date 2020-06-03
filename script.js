@@ -3,7 +3,8 @@ const gameboard = (() => {
     let board = new Array(9);
 
     board[0] = "X";
-
+    board[4] = "X";
+    board[8] = "O";
     return {
         board
     };
