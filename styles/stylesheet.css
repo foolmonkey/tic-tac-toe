@@ -1,6 +1,6 @@
 body {
   background-color: rgb(211, 211, 211);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
 }
 
@@ -8,7 +8,7 @@ body {
   font-size: 2.5em;
   display: flex;
   justify-content: center;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   margin: 0;
   padding: 0.5em;
   color: rgb(12, 12, 12);
@@ -94,28 +94,51 @@ body {
 }
 
 #restart {
-    font-weight: bold;
-    background-color: rgb(204, 53, 53);
-    color: white;
+  font-weight: bold;
+  background-color: rgb(204, 53, 53);
+  color: white;
   padding: 1.5vh 2vh 1.5vh 2vh;
   margin-top: 2.5vh;
   border-style: none;
   border-radius: 0.3em;
   font-size: 2.7vh;
-  outline:none;
+  outline: none;
 }
 
-#restart:hover{
-    background-color: rgb(179, 44, 44);
+#restart:hover {
+  background-color: rgb(179, 44, 44);
 }
 
-#result{
-      z-index: -1;
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 50vh;
+#result {
+  z-index: -1;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 50vh;
   height: 50vh;
   padding-top: 23vh;
   margin: auto;
-  font-size: 3vh;  
+  font-size: 3vh;
+}
+
+.playerName{
+    border-style: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 3vh;
+    width:12vw;
+    border-radius: 0.3em;
+    margin-bottom: 1vh;
+    padding:1vh;
+    padding-bottom: 0.5vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+}
+
+.playerName:hover{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.playerName:hover{
+    background-color: white;
 }

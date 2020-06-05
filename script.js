@@ -166,7 +166,7 @@ const displayController = (() => {
     restartButton.onclick = function () {
       gameboard.clear();
       resetMarkerIndicator();
-      resultWindow.style['z-index'] = -1;
+      resultWindow.style["z-index"] = -1;
       render();
     };
   };
@@ -180,14 +180,14 @@ const displayController = (() => {
       case "O":
         return playerTwo.name + " wins!";
       default:
-        return '';
+        return "";
     }
   };
 
   const displayResult = () => {
     resultWindow.innerHTML = getResultMessage();
-    if(resultWindow.innerHTML != ''){
-        resultWindow.style['z-index'] = 2;
+    if (resultWindow.innerHTML != "") {
+      resultWindow.style["z-index"] = 2;
     }
   };
 
