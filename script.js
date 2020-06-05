@@ -20,11 +20,16 @@ const gameboard = (() => {
     if (board[index] == null && !isGameOver()) {
       board[index] = currentMarker;
       checkMove();
+      return true;
     }
+    return false;
   };
 
   const clear = () => {
     board.splice(0, board.length);
+    currentMarker = "X";
+    turn = 1;
+    gameWon = "";
   };
 
   const toggleMarker = () => {
@@ -80,16 +85,14 @@ const gameboard = (() => {
 
   const winningMove = () => {
     gameWon = currentMarker;
-    console.log(currentMarker + " Wins!" + " gamewon= " + gameWon);
   };
 
   const tieMove = () => {
     gameWon = "T";
-    console.log("Tie!");
   };
 
   const isGameOver = () => {
-      return gameWon != '';
+    return gameWon != "";
   };
 
   return {
@@ -102,20 +105,22 @@ const gameboard = (() => {
 
 // displayController module
 const displayController = (() => {
-  const render = () => {
-    let container = document.getElementById("container");
-    container.innerHTML = "";
+  let container = document.getElementById("container");
+  let gameWindow = document.getElementById('gameWindow');
+  let playerOne = document.getElementById('playerOne');
+  let playerTwo = document.getElementById('playerTwo');
 
+  const render = () => {
     createGameTiles(container);
   };
 
-  // append gameboard elements to container
-  const createGameTiles = (container) => {
+  // append gameboard elements to gameWindow
+  const createGameTiles = () => {
     for (let i = 0, len = gameboard.board.length; i < len; i++) {
       let gameTile = document.createElement("div");
       gameTile.textContent = gameboard.board[i];
       gameTile.classList.add("square");
-      container.appendChild(gameTile);
+      gameWindow.appendChild(gameTile);
 
       addGameTileListener(gameTile, i);
     }
@@ -123,9 +128,16 @@ const displayController = (() => {
 
   const addGameTileListener = (gameTile, index) => {
     gameTile.addEventListener("click", function () {
-      gameboard.addMarker(index);
-      gameTile.textContent = gameboard.board[index];
+        if(gameboard.addMarker(index)){
+            gameTile.textContent = gameboard.board[index];
+            toggleMarkerIndicator();
+        }
     });
+  };
+  
+  const toggleMarkerIndicator = () => {
+      playerOne.children[1].classList.toggle("currentMarker");
+      playerTwo.children[1].classList.toggle("currentMarker");
   };
 
   return {
