@@ -1,89 +1,121 @@
-body{
-    background-color: rgb(211, 211, 211);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+body {
+  background-color: rgb(211, 211, 211);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
 }
 
-#gameName{
-    font-size: 2.5em;
-    display: flex;
-    justify-content: center;
-    font-family: 'Bungee', cursive;
-    margin: 0;
-    padding: 0.5em;
-    color: rgb(12, 12, 12);
-    background-color: rgb(204, 53, 53); 
+#gameName {
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  font-family: 'Bungee', cursive;
+  margin: 0;
+  padding: 0.5em;
+  color: rgb(12, 12, 12);
+  background-color: rgb(204, 53, 53);
 }
 
-#container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin-top: 5vh;
+#container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 5vh;
+  user-select: none;
 }
 
-#gameWindow{
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    width: 50vh;
-    height: 50vh;
-    padding: 3vh;
-    border-width: 2vh;
-    border-style: solid;
-    border-color: rgb(26, 26, 26);
-    background-color: rgb(180, 55, 55); 
-    column-gap: 1.5vh;
-    row-gap: 1.5vh;
+#game {
+  text-align: center;
 }
 
-.square{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 9vh;
-    background-color: rgb(211, 211, 211);
-    color: rgb(65, 65, 65);
-    user-select: none;
+#gameWindow {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  width: 50vh;
+  height: 50vh;
+  padding: 3vh;
+  border-width: 2vh;
+  border-style: solid;
+  border-color: rgb(26, 26, 26);
+  background-color: rgb(180, 55, 55);
+  column-gap: 1.5vh;
+  row-gap: 1.5vh;
 }
 
-.square:hover{
-    background-color: rgb(199, 199, 199); 
+.square {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9vh;
+  background-color: rgb(211, 211, 211);
+  color: rgb(65, 65, 65);
+  user-select: none;
 }
 
-.square:active{
-    background-color: rgb(180, 180, 180);
+.square:hover {
+  background-color: rgb(194, 194, 194);
 }
 
-#playerOne{
-    text-align: center;
-    margin-right: 3vh;
+.square:active {
+  background-color: rgb(180, 180, 180);
 }
 
-#playerTwo{
-    text-align: center;
-    margin-left: 3vh;
+#playerOne {
+  text-align: center;
+  margin-right: 2vh;
 }
 
-.marker{
-    font-size: 5vh;
-    line-height: 8vh;
-    background-color: rgb(187, 187, 187);
+#playerTwo {
+  text-align: center;
+  margin-left: 3vh;
+}
+
+.marker {
+  font-size: 5vh;
+  line-height: 8vh;
+  background-color: rgb(187, 187, 187);
+  color: white;
+  border-color: rgb(58, 58, 58);
+  border-width: 1vh;
+  border-style: solid;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.currentMarker {
+  border-color: black;
+  color: rgb(240, 240, 240);
+  background-color: rgb(180, 55, 55);
+}
+
+#restart {
+    font-weight: bold;
+    background-color: rgb(204, 53, 53);
     color: white;
-    border-color: rgb(58, 58, 58);
-    border-width: 1vh;
-    border-style: solid;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
-    margin:auto;
+  padding: 1.5vh 2vh 1.5vh 2vh;
+  margin-top: 2.5vh;
+  border-style: none;
+  border-radius: 0.3em;
+  font-size: 2.7vh;
+  outline:none;
 }
 
-.currentMarker{
-    border-color: black;
-    color: rgb(240, 240, 240);
-    background-color: rgb(180, 55, 55);
+#restart:hover{
+    background-color: rgb(179, 44, 44);
+}
+
+#result{
+      z-index: -1;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 50vh;
+  height: 50vh;
+  padding-top: 23vh;
+  margin: auto;
+  font-size: 3vh;  
 }

@@ -4,9 +4,7 @@ const player = (name, marker) => {
     name = aName;
   };
 
-  return () => {
-    name, marker, setName;
-  };
+  return { name, marker };
 };
 
 // gameboard module
@@ -26,7 +24,9 @@ const gameboard = (() => {
   };
 
   const clear = () => {
-    board.splice(0, board.length);
+    for (let i = 0; i < 9; i++) {
+      board[i] = null;
+    }
     currentMarker = "X";
     turn = 1;
     gameWon = "";
@@ -95,23 +95,36 @@ const gameboard = (() => {
     return gameWon != "";
   };
 
+  const getGameWon = () => {
+    return gameWon;
+  };
+
   return {
     board,
     addMarker,
     clear,
     isGameOver,
+    getGameWon,
+    playerOne,
+    playerTwo,
   };
 })();
 
 // displayController module
 const displayController = (() => {
   let container = document.getElementById("container");
-  let gameWindow = document.getElementById('gameWindow');
-  let playerOne = document.getElementById('playerOne');
-  let playerTwo = document.getElementById('playerTwo');
+  let gameWindow = document.getElementById("gameWindow");
+  let resultWindow = document.getElementById("result");
+  let playerOneDisplay = document.getElementById("playerOne");
+  let playerTwoDisplay = document.getElementById("playerTwo");
+  let playerOne = player("PLAYER 1", "X");
+  let playerTwo = player("PLAYER 2", "O");
 
   const render = () => {
-    createGameTiles(container);
+    gameWindow.innerHTML = "";
+
+    createGameTiles();
+    addRestartButtonEvent();
   };
 
   // append gameboard elements to gameWindow
@@ -128,16 +141,54 @@ const displayController = (() => {
 
   const addGameTileListener = (gameTile, index) => {
     gameTile.addEventListener("click", function () {
-        if(gameboard.addMarker(index)){
-            gameTile.textContent = gameboard.board[index];
-            toggleMarkerIndicator();
-        }
+      if (gameboard.addMarker(index)) {
+        gameTile.textContent = gameboard.board[index];
+        toggleMarkerIndicator();
+      }
+
+      displayResult();
     });
   };
-  
+
   const toggleMarkerIndicator = () => {
-      playerOne.children[1].classList.toggle("currentMarker");
-      playerTwo.children[1].classList.toggle("currentMarker");
+    playerOneDisplay.children[1].classList.toggle("currentMarker");
+    playerTwoDisplay.children[1].classList.toggle("currentMarker");
+  };
+
+  const resetMarkerIndicator = () => {
+    playerOneDisplay.children[1].classList.add("currentMarker");
+    playerTwoDisplay.children[1].classList.remove("currentMarker");
+  };
+
+  const addRestartButtonEvent = () => {
+    let restartButton = document.getElementById("restart");
+
+    restartButton.onclick = function () {
+      gameboard.clear();
+      resetMarkerIndicator();
+      resultWindow.style['z-index'] = -1;
+      render();
+    };
+  };
+
+  const getResultMessage = () => {
+    switch (gameboard.getGameWon()) {
+      case "T":
+        return "Tie!";
+      case "X":
+        return playerOne.name + " wins!";
+      case "O":
+        return playerTwo.name + " wins!";
+      default:
+        return '';
+    }
+  };
+
+  const displayResult = () => {
+    resultWindow.innerHTML = getResultMessage();
+    if(resultWindow.innerHTML != ''){
+        resultWindow.style['z-index'] = 2;
+    }
   };
 
   return {

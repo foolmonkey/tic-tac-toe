@@ -7,8 +7,9 @@
     <meta charset="UTF-8" />
     <link href="styles/cssreset.css" rel="stylesheet" type="text/css">
     <link href="styles/stylesheet.css" rel="stylesheet" type="text/css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">    
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;600;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -16,12 +17,17 @@
 
     <div id="container">
         <div id="playerOne">
-            <h2 >PLAYER 1</h2>
+            <h2>PLAYER 1</h2>
             <div class="currentMarker marker">X</div>
         </div>
-        <div id="gameWindow"></div>
+        <div id="game">
+            <div id="result"></div>
+            <div id="gameWindow">
+            </div>
+            <button id="restart">RESTART</button>
+        </div>
         <div id="playerTwo">
-            <h2 >PLAYER 2</h2>
+            <h2>PLAYER 2</h2>
             <div class="marker">O</div>
         </div>
     </div>
