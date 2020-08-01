@@ -125,6 +125,7 @@ const displayController = (() => {
 
     createGameTiles();
     addRestartButtonEvent();
+    addChangeNameListener();
   };
 
   // append gameboard elements to gameWindow
@@ -169,6 +170,16 @@ const displayController = (() => {
       resultWindow.style["z-index"] = -1;
       render();
     };
+  };
+
+  const addChangeNameListener = () => {
+    playerOneDisplay.children[0].addEventListener("change", function (e) {
+      playerOne = player(e.target.value, "X");
+    });
+
+    playerTwoDisplay.children[0].addEventListener("change", function (e) {
+      playerTwo = player(e.target.value, "O");
+    });
   };
 
   const getResultMessage = () => {
