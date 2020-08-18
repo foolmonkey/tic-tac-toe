@@ -2,6 +2,7 @@ body {
   background-color: rgb(211, 211, 211);
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
+  overflow: hidden;
 }
 
 #gameName {
@@ -120,25 +121,38 @@ body {
   font-size: 3vh;
 }
 
-.playerName{
-    border-style: none;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 900;
-    font-size: 3vh;
-    width:12vw;
-    border-radius: 0.3em;
-    margin-bottom: 1vh;
-    padding:1vh;
-    padding-bottom: 0.5vh;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0);
-    outline: none;
+.playerName {
+  border-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3vh;
+  width: 12vw;
+  border-radius: 0.3em;
+  margin-bottom: 1vh;
+  padding: 1vh;
+  padding-bottom: 0.5vh;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
 }
 
-.playerName:hover{
-    background-color: rgba(255, 255, 255, 0);
+.playerName:hover {
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.playerName:hover{
-    background-color: white;
+.playerName:hover {
+  background-color: white;
+}
+
+#github {
+  color: rgb(23, 36, 48);
+  margin: 15px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+#github:hover {
+  color: black;
 }

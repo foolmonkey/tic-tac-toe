@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
+  <head>
     <title>Tic Tac Toe</title>
     <meta charset="UTF-8" />
-    <link href="styles/cssreset.css" rel="stylesheet" type="text/css">
-    <link href="styles/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="styles/cssreset.css" rel="stylesheet" type="text/css" />
+    <link href="styles/stylesheet.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/64486ec299.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;600;900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
+  <body>
     <h1 id="gameName">Tic Tac Toe</h1>
 
     <div id="container">
-        <div id="playerOne">
-            <input class="playerName" type="text" placeholder="PLAYER 1">
-            <div class="currentMarker marker">X</div>
-        </div>
-        <div id="game">
-            <div id="result"></div>
-            <div id="gameWindow">
-            </div>
-            <button id="restart">RESTART</button>
-        </div>
-        <div id="playerTwo">
-            <input class="playerName" type="text" placeholder="PLAYER 2">
-            <div class="marker">O</div>
-        </div>
+      <div id="playerOne">
+        <input class="playerName" type="text" placeholder="PLAYER 1" />
+        <div class="currentMarker marker">X</div>
+      </div>
+      <div id="game">
+        <div id="result"></div>
+        <div id="gameWindow"></div>
+        <button id="restart">RESTART</button>
+      </div>
+      <div id="playerTwo">
+        <input class="playerName" type="text" placeholder="PLAYER 2" />
+        <div class="marker">O</div>
+      </div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
-</body>
+    <a id="github" href="https://github.com/foolmonkey"
+      ><i class="fab fa-github fa-2x"></i
+    ></a>
 
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
